@@ -8,6 +8,10 @@ submit.addEventListener("click", function submit() {
     message.style.display = "none";
     var input = dob.value.replace(/[^0-9]/g, "")
     let sum = 0;
+    if (input == 0 || luckyNo.value <= 0) {
+        alert("Enter all neccessary values")
+        return
+    }
     while (input > 0) {
         n = input % 10;
         sum += n;
@@ -15,10 +19,7 @@ submit.addEventListener("click", function submit() {
 
         // console.log(n + " " + sum + " " + input)
     }
-    if (input == 0 || luckyNo.value == 0) {
-        alert("Enter all neccessary values")
-        return
-    }
+    
     if (sum % luckyNo.value == 0) {
 
         showMessage("YAYYY.. Your bithday is luckyyyy 🥳 🥳")
